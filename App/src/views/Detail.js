@@ -8,31 +8,41 @@ const genders = {
 	f: 'Female'
 };
 
-const DetailBase = kind({
-	name: 'Detail',
+class DetailBase extends React.Component {
+	constructor (props) {
+		super(props);
+	}
 
-	propTypes: {
+	static propTypes = {
 		color: PropTypes.string,
 		gender: PropTypes.string,
 		name: PropTypes.string,
-		weight: PropTypes.number
-	},
+		weight: PropTypes.number,
+		index: PropTypes.number
+	}
 
-	defaultProps: {
+	static defaultProps = {
 		gender: 'm',
 		color: 'Tabby',
 		weight: 9
-	},
+	}
 
-	render: ({color, gender, name, weight, ...rest}) => (
-		<Panel {...rest}>
-			<Header title={name} />
-			<div>Gender: {genders[gender]}</div>
-			<div>Color: {color}</div>
-			<div>Weight: {weight}oz</div>
-		</Panel>
-	)
-});
+	render () {
+		return (
+			<Panel {...this.props}>
+				{this.props.name === "오늘의 그림" ? (
+					<div>
+						<div>Gender: {genders[this.props.gender]}</div>
+						<div>Color: {this.props.color}</div>	
+						<div>Weight: {this.props.weight}oz</div>
+					</div>
+				) : (
+					<div />
+				)}
+			</Panel>
+		);
+	}
+}
 
 export default DetailBase;
 export {DetailBase as Detail, DetailBase};

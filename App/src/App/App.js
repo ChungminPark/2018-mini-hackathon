@@ -9,12 +9,8 @@ import Detail from '../views/Detail';
 import List from '../views/List';
 
 const kittens = [
-	'Garfield',
-	'Nermal',
-	'Simba',
-	'Nala',
-	'Tiger',
-	'Kitty'
+	'오늘의 그림',
+	'그림 찾기'
 ];
 
 const AppBase = kind({
@@ -53,7 +49,7 @@ const AppBase = kind({
 		<div {...rest}>
 			<ActivityPanels index={index} onSelectBreadcrumb={onNavigate}>
 				<List onSelectKitten={onSelectKitten}>{kittens}</List>
-				<Detail name={kittens[kitten]} />
+				<Detail name={kittens[kitten]} index={index}/>
 			</ActivityPanels>
 		</div>
 	)

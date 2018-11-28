@@ -16,7 +16,6 @@ const ListBase = kind({
 
 	render: ({children, onSelectKitten, ...rest}) => (
 		<Panel {...rest}>
-			<Header title="Kittens!" />
 			<Repeater childComponent={Kitten} indexProp="index" itemProps={{onSelect: onSelectKitten}}>
 				{children}
 			</Repeater>
