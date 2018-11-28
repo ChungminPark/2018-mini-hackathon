@@ -20,10 +20,10 @@ Here's what your panels' JSX will end up looking like:
 
 ```
 <RoutablePanels {...rest} arranger={SlideLeftArranger} onBack={onNavigate} path={path}>
-	<Route path="first" component={AboutPanel} title="First" onClick={onSecondPanel}>
-		<Route path="second" component={MainPanel} title="Second" onClick={onFourthPanel} />
-		<Route path="third" component={MainPanel} title="Third" onClick={onFirstPanel}>
-			<Route path="fourth" component={MainPanel} title="Fouth" onClick={onThirdPanel} />
+	<Route path="first" component={MenuPanel} title="First" onClick={onSecondPanel}>
+		<Route path="second" component={RecommandPanel} title="Second" onClick={onFourthPanel} />
+		<Route path="third" component={RecommandPanel} title="Third" onClick={onFirstPanel}>
+			<Route path="fourth" component={RecommandPanel} title="Fouth" onClick={onThirdPanel} />
 		</Route>
 	</Route>
 </RoutablePanels>

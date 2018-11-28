@@ -4,10 +4,15 @@ import kind from '@enact/core/kind';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import BackgroundSlideshow from 'react-background-slideshow'
+
+import image1 from '../assets/image1.jpg';
+import image2 from '../assets/image2.jpg';
+
 import RouteTree from './RouteTree';
 
-const MainPanel = kind({
-	name: 'MainPanel',
+const RecommandPanel = kind({
+	name: 'RecommandPanel',
 
 	propTypes: {
 		next: PropTypes.string,
@@ -23,12 +28,13 @@ const MainPanel = kind({
 		delete rest.next;
 		return (
 			<Panel {...rest}>
-				<Header title={title} />
-				<RouteTree />
+				{/* <Header title={title} />
+				<RouteTree /> */}
+				<BackgroundSlideshow images={[image1, image2]} animationDelay={2000}/> 
 				<Button onClick={onClick}>{text}</Button>
 			</Panel>
 		);
 	}
 });
 
-export default MainPanel;
+export default RecommandPanel;

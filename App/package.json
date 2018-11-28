@@ -38,6 +38,7 @@
     "@enact/webos": "^2.0.0",
     "prop-types": "^15.6.0",
     "react": "^16.4.2",
+    "react-background-slideshow": "^1.0.4",
     "react-dom": "^16.4.2"
   }
 }

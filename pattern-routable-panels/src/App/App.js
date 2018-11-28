@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {SlideLeftArranger} from '@enact/ui/ViewManager';
 
-import AboutPanel from '../views/AboutPanel';
-import MainPanel from '../views/MainPanel';
+import MenuPanel from '../views/MenuPanel';
+import RecommandPanel from '../views/RecommandPanel';
 
 import AppStateDecorator from './AppStateDecorator';
 
@@ -30,11 +30,8 @@ const App = kind({
 	render: ({onFirstPanel, onFourthPanel, onNavigate, onSecondPanel, onThirdPanel, path, ...rest}) => {
 		return (
 			<RoutablePanels {...rest} arranger={SlideLeftArranger} onBack={onNavigate} path={path}>
-				<Route path="first" component={AboutPanel} title="About Routable Panels Pattern" onClick={onSecondPanel}>
-					<Route path="second" component={MainPanel} next="fourth" title="Second" onClick={onFourthPanel} />
-					<Route path="third" component={MainPanel} next="first" title="Third" onClick={onFirstPanel}>
-						<Route path="fourth" component={MainPanel} next="third" title="Fourth" onClick={onThirdPanel} />
-					</Route>
+				<Route path="first" component={MenuPanel} title="About Routable Panels Pattern" onClickRecommand={onSecondPanel}>
+					<Route path="second" component={RecommandPanel} next="fourth" title="Second" onClick={onFourthPanel} />
 				</Route>
 			</RoutablePanels>
 		);

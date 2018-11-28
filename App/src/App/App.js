@@ -10,7 +10,7 @@ import List from '../views/List';
 
 const kittens = [
 	'오늘의 그림',
-	'그림 찾기'
+	'명화'
 ];
 
 const AppBase = kind({

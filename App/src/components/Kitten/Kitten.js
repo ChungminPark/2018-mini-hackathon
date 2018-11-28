@@ -34,7 +34,7 @@ const KittenBase = kind({
 
 	computed: {
 		url: ({index, size}) => {
-			return `//loremflickr.com/${size}/${size}/kitten?random=${index}`;
+			return `//loremflickr.com/${size}/${size}/painting?random=${index}`;
 		}
 	},
 
