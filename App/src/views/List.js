@@ -3,20 +3,26 @@ import kind from '@enact/core/kind';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Repeater from '@enact/ui/Repeater';
+import Paint from '../components/Paint';
 
-import Kitten from '../components/Kitten';
+import css from './List.less';
 
 const ListBase = kind({
 	name: 'List',
 
 	propTypes: {
 		children: PropTypes.array,
-		onSelectKitten: PropTypes.func
+		onSelectPaint: PropTypes.func
 	},
 
-	render: ({children, onSelectKitten, ...rest}) => (
+	styles: {
+		css,
+		className: 'list'
+	},
+
+	render: ({children, onSelectPaint, ...rest}) => (
 		<Panel {...rest}>
-			<Repeater childComponent={Kitten} indexProp="index" itemProps={{onSelect: onSelectKitten}}>
+			<Repeater childComponent={Paint} indexProp="index" itemProps={{onSelect: onSelectPaint}}>
 				{children}
 			</Repeater>
 		</Panel>

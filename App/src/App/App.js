@@ -8,7 +8,7 @@ import React from 'react';
 import Detail from '../views/Detail';
 import List from '../views/List';
 
-const kittens = [
+const Paints = [
 	'오늘의 그림',
 	'명화'
 ];
@@ -18,21 +18,21 @@ const AppBase = kind({
 
 	propTypes: {
 		index: PropTypes.number,
-		kitten: PropTypes.number,
+		Paint: PropTypes.number,
 		onNavigate: PropTypes.func,
-		onSelectKitten: PropTypes.func
+		onSelectPaint: PropTypes.func
 	},
 
 	defaultProps: {
 		index: 0,
-		kitten: 0
+		Paint: 0
 	},
 
 	handlers: {
-		onSelectKitten: (ev, {onNavigate, onSelectKitten}) => {
-			if (onSelectKitten) {
-				onSelectKitten({
-					kitten: ev.index
+		onSelectPaint: (ev, {onNavigate, onSelectPaint}) => {
+			if (onSelectPaint) {
+				onSelectPaint({
+					Paint: ev.index
 				});
 			}
 
@@ -45,18 +45,18 @@ const AppBase = kind({
 		}
 	},
 
-	render: ({index, onNavigate, onSelectKitten, kitten, ...rest}) => (
+	render: ({index, onNavigate, onSelectPaint, Paint, ...rest}) => (
 		<div {...rest}>
 			<ActivityPanels index={index} onSelectBreadcrumb={onNavigate}>
-				<List onSelectKitten={onSelectKitten}>{kittens}</List>
-				<Detail name={kittens[kitten]} index={index}/>
+				<List onSelectPaint={onSelectPaint}>{Paints}</List>
+				<Detail name={Paints[Paint]} index={index}/>
 			</ActivityPanels>
 		</div>
 	)
 });
 
 const App = Changeable({prop: 'index', change: 'onNavigate'},
-	Changeable({prop: 'kitten', change: 'onSelectKitten'},
+	Changeable({prop: 'Paint', change: 'onSelectPaint'},
 		MoonstoneDecorator(AppBase)
 	)
 );
