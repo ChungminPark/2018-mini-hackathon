@@ -9,7 +9,7 @@ Enact
 - dist폴더로 이동: cd dist
 - node 패키징 확인: ares-server . -o (완료 후 하단의 webOS 패키징부터 시작)
 
-webOS
+webOS OSE
 - 디바이스설치: ares-setup-device
 - 디바이스리스트: ares-setup-device -list
 - webOS 패키징: ares-package . (dist폴더 내에서 실행, dist/appinfo 파일 존재와 설정값 확인)
