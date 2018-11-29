@@ -1,4 +1,4 @@
-# 2018-mini-hackathon
+# 2018 Kosslab Mini hHckathon - Team6 스노우보이
 
 ## 명령어 모음
 
